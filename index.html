@@ -1,69 +1,72 @@
   <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>slide</title>
-      <link rel="stylesheet" href="css/reset.css" />
-      <link rel="stylesheet" href="css/style.css" />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      />
-      <script defer src="script.js"></script>
-    </head>
-    <body>
-      <section>
-        <div class="slider-wraper">
-          <i
-            class="fa-solid fa-circle-chevron-left arrow arrow-left"
-            id="arrow-left"
-          ></i>
-
-          <i
-            class="fa-solid fa-circle-chevron-right arrow arrow-right"
-            id="arrow-right"
-          ></i>
-          <!-- <button class="arrow arrow-left" id="arrow-left"> < </button>
-              <button class="arrow arrow-right" id="arrow-right"> > </button> -->
-          <div class="slider-content" id="slider-content"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <section class="slider-section">
+        <div class="slider-wrapper">
+            <div class="arrow arrow-right" id="arrow-right">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="arrow arrow-left" id="arrow-left">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="slider-content" id="slider-content">
+                <!-- <div class="slide">
+                    <div class="bg-image" style="background-image: "></div>
+                    <h3></h3>
+                </div> -->
+            </div>
         </div>
-      </section>
-
-      <section>
-        <form action="" id="registrationForm" method="POST">
-          <div>
-            <input type="text" name="username" id="usernameField" />
-            <span class="error-text" id="error_username" ></span>
-          </div>
-          <div>
-            <input
-              type="password"
-              name="password"
-              id="passwordField"
-              placeholder="Enter your password"
-            />
-            <i id="toogleIcon" class="fa-solid fa-eye"></i>
-            <span class="error-text" id="error_password"></span>
-          </div>
-          <div>
-            <input type="password"
-              name="password2"
-              id="passwordFieldrepeat"
-              placeholder="Repeat your password"
-            />
-            <span class="error-text" id="error_password2"></span>
-          </div>
-          <div>
-            <input type="checkbox" name="agree" id="agreeTerms" />
-            <label for="agreeTerms">I agree and conditions</label>
-            <span class="error-text" id="error_agree"></span>
-          </div>
-          <button type="submit">Submit Form</button>
+    </section>
+    
+    <section>
+        <form action="" id="registration form" method="post">
+            <div>
+                <input type="text" name="username" id="usernamefield">
+                <label for="usernamefield"></label>
+                <span class="error-text" id="error-username"></span>
+            </div>
+            <div>
+                <input type="password" name="password" id="passwordfield" placeholder="your password">
+                <label for="passwordfield"></label>
+                <i class="fa-solid fa-eye" id="Icon"></i>
+                <span class="error-text" id="error-password"></span>
+            </div>
+            <div>
+                <input type="password" name="password2" id="passwordfieldrepeat" placeholder="repeat your password">
+                <label for="passwordfield2"></label>
+                <span class="error-text" id="error-password2"></span>
+            </div>
+            <div>
+                <input type="checkbox" name="agree" id="agreeterms">
+                <label for="agreeterms"> i agree terms and conditions</label>
+                <span class="error-text" id="error-agree"></span>
+            </div>
+            <button type="submit"> submit form</button>
         </form>
-      </section>
-    </body>
-  </html>
+    </section>
+
+<script src="script.js"></script>   
+</body>
+</html>
 
 
