@@ -3,26 +3,26 @@ let data = [
   {
     id: 1,
     imageUrl:
-      "https://images.pexels.com/photos/268941/pexels-photo-268941.jpeg?cs=srgb&dl=pexels-pixabay-268941.jpg&fm=jpg",
-    title: "slider title 1",
+      "https://futbol4life.com/wp-content/uploads/2021/03/7-ngo-help-children-intro-750x330.jpg",
+    title: "children",
   },
   {
     id: 2,
     imageUrl:
-      "https://images.unsplash.com/photo-1528465424850-54d22f092f9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y292ZXIlMjBwaG90b3xlbnwwfHwwfHw%3D&w=1000&q=80",
-    title: "slider title 2",
+      "https://images.news18.com/ibnlive/uploads/2022/06/children-day-16549327443x2.jpg?impolicy=website&width=510&height=356",
+    title: "children 2",
   },
   {
     id: 3,
     imageUrl:
-      "https://images.pexels.com/photos/268941/pexels-photo-268941.jpeg?cs=srgb&dl=pexels-pixabay-268941.jpg&fm=jpg",
-    title: "slider title 3",
+      "https://res.cloudinary.com/psychlopaedia/image/upload/w_1200,h_500,c_fill,g_face/q_40/remote/2016/09/89506247_children-lying-in-circle-on-grass_web.jpg",
+    title: "children 3",
   },
   {
     id: 4,
     imageUrl:
-      "https://images.unsplash.com/photo-1528465424850-54d22f092f9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y292ZXIlMjBwaG90b3xlbnwwfHwwfHw%3D&w=1000&q=80",
-    title: "slider title 4",
+      "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    title: "children 4",
   },
 ];
 
