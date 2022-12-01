@@ -1,75 +1,62 @@
+
 let data = [
   {
     id: 1,
     imageUrl:
-      "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTkwNTgxMTQyMTc4MTEzNDA0/autumn-quotes-jpg.webp",
+      "https://images.pexels.com/photos/268941/pexels-photo-268941.jpeg?cs=srgb&dl=pexels-pixabay-268941.jpg&fm=jpg",
     title: "slider title 1",
   },
-
   {
     id: 2,
     imageUrl:
-      "https://ik.imagekit.io/panmac/tr:f-auto,w-740,pr-true//bcd02f72-b50c-0179-8b4b-5e44f5340bd4/7a0b8947-d971-444f-9287-e11fd0d2c421/autumn-poems-header-min.jpg",
+      "https://images.unsplash.com/photo-1528465424850-54d22f092f9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y292ZXIlMjBwaG90b3xlbnwwfHwwfHw%3D&w=1000&q=80",
     title: "slider title 2",
   },
-
   {
     id: 3,
     imageUrl:
-      "https://cdn.theatlantic.com/thumbor/u0-GeOWJbn-l50s62fv-25l_kfI=/1500x921/media/img/photo/2022/10/fall-air-images-season/a01_1244081372/original.jpg",
+      "https://images.pexels.com/photos/268941/pexels-photo-268941.jpeg?cs=srgb&dl=pexels-pixabay-268941.jpg&fm=jpg",
     title: "slider title 3",
   },
   {
     id: 4,
     imageUrl:
-      "https://cdn.theatlantic.com/thumbor/2EcYt4eTZV6X-TfW6Zos3CkuT9Q=/1500x1025/media/img/photo/2022/10/fall-air-images-season/a03_AP22284759812052/original.jpg",
+      "https://images.unsplash.com/photo-1528465424850-54d22f092f9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y292ZXIlMjBwaG90b3xlbnwwfHwwfHw%3D&w=1000&q=80",
     title: "slider title 4",
-  },
-  {
-    id: 1,
-    imageUrl:
-      "https://images.radio.com/aiu-media/GettyImages1259141694-29f8600b-8cec-4a87-9238-a6ea3203fd04.jpg?width=800",
-    title: "slider title 1",
   },
 ];
 
 let arrowLeft = document.getElementById("arrow-left");
 let arrowRight = document.getElementById("arrow-right");
-let sliderContent = document.getElementById("slider-content");
+let sliderCOntent = document.getElementById("slider-content");
 let sliderIndex = 0;
 
-// დივ ტეგი
-function createDiveTag() {
-  const divTag = document.createElement("div");
+
+
+function createDivTag() {
+  let divTag = document.createElement("div");
   divTag.classList.add("slide");
 
   return divTag;
 }
 
-// სურათი
-// image-item რაც გვინდა იმას დავარქმევთ
-
-function creteImgtag(image) {
-  // let tagImage = document.createElement('img');
-  // tagImage.setAttribute('src', image.imageUrl);
-  // tagImage.setAttribute('alt', image.title);
-
-  // bg.image
-  let tagImage = document.createElement("div");
-  tagImage.style.backgroundImage = `url(${image.imageUrl})`;
-  tagImage.classList.add("bg-image");
+function createImgTag(item) {
+    let tagImage = document.createElement("img");
+    tagImage.setAttribute("src", item.imageUrl);
+    tagImage.setAttribute("alt", item.title);
 
   return tagImage;
 }
-// სათაური
-function createTitletag(image) {
+
+
+function createTitleTag(item) {
   let tagTitle = document.createElement("h3");
-  tagTitle.textContent = image.title;
+  tagTitle.textContent = item.title;
 
   return tagTitle;
 }
 
-// dot შექმნა
+
 function createDots() {
   let dotsParent = document.createElement("div");
   dotsParent.classList.add("dotParent");
@@ -82,113 +69,114 @@ function createDots() {
 
   return dotsParent;
 }
+
 function slide() {
-  sliderContent.innerHTML = " ";
-  let slideItem = createDiveTag(data[sliderIndex]);
-  let imgTag = creteImgtag(data[sliderIndex]);
-  let titleTag = createTitletag(data[sliderIndex]);
-  let dotsElement = createDots();
+  sliderCOntent.innerHTML = " ";
+  const slideItem = createDivTag(data[sliderIndex]);
+  const imgTag = createImgTag(data[sliderIndex]);
+  const titleTag = createTitleTag(data[sliderIndex]);
+  const dotsElement = createDots();
 
   slideItem.appendChild(imgTag);
   slideItem.appendChild(titleTag);
-  sliderContent.appendChild(slideItem);
-  sliderContent.appendChild(dotsElement);
+  sliderCOntent.appendChild(slideItem);
+  sliderCOntent.appendChild(dotsElement);
 }
-function arroLeftclick() {
+
+function arrowLeftClick() {
   if (sliderIndex == 0) {
-    // sliderIndex = data.length - 1;
-    // slide()
+    sliderIndex = data.length - 1;
+    slide();
     return;
   }
   sliderIndex--;
   slide();
 }
-function arrowRightclick() {
+
+function arrowRightClick() {
   if (sliderIndex == data.length - 1) {
-    // sliderIndex = 0;
-    // slide()
+    sliderIndex = 0;
+    slide();
     return;
   }
   sliderIndex++;
   slide();
 }
 
-arrowLeft.addEventListener("click", arroLeftclick);
+arrowLeft.addEventListener("click", arrowLeftClick);
+arrowRight.addEventListener("click", arrowRightClick);
 
-arrowRight.addEventListener("click", arrowRightclick);
-
-setInterval(() => {
-  arrowRightclick();
-}, 3000);
+// setInterval(() => {
+//   arrowRightClick();
+// }, 3000);
 
 slide();
 
-// forms validation
+
+
+//form validation
 let registrationForm = document.getElementById("registrationForm");
 
 registrationForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let errors = {};
 
-  // username
+  //username
   let usernameValue = document.getElementById("usernameField").value;
-  if (usernameValue == "") {
-    errors.username = "Username filed can not be empty";
+  if (usernameValue == "" && usernameValue.length < 5) {
+    errors.username =
+      "Username field can not be empty and must be more then 5 chaarcters";
   }
 
-  // passvord
-
+  //password
   let passwordValue = document.getElementById("passwordField").value;
   let passwordValue2 = document.getElementById("passwordFieldrepeat").value;
 
   if (passwordValue == "") {
-    errors.password = "Password filed can not be empty";
+    errors.password = "Password field can not be empty";
   }
-
   if (passwordValue != passwordValue2) {
     errors.password2 = "Passwords do not match";
   }
 
-  // checkbox
-
+  //checkbox
   let agreeField = document.getElementById("agreeTerms").checked;
 
   if (!agreeField) {
-    errors.agree = "You must agree our terms and conditions";
+    errors.agree = "You must egree our terms and contiions";
   }
 
   console.log(errors);
 
-  document.querySelectorAll(".error-text").forEach(item1=> {
-    item1.innerText =" ";
+  document.querySelectorAll(".error-text").forEach((item) => {
+    item.innerText = " ";
   });
 
   for (let key in errors) {
-    console.log(key);
-    let spanText = document.getElementById('error_' + key);
+    let spanText = document.getElementById("error_" + key);
 
     if (spanText) {
       spanText.innerText = errors[key];
     }
   }
 
-  if(Object.keys(errors).length == 0){
+  if (Object.keys(errors).length == 0) {
     registrationForm.submit();
   }
 });
 
-// show hide password
-let password = document.getElementById('passwordField');
-let icon = document.getElementById('toogleIcon');
+//show hide password
+let password = document.getElementById("passwordField");
+let icon = document.getElementById("Icon");
 
- icon.addEventListener('click', function() {
-   if (password.type == "password") {
-    password.setAttribute("type","text");
+icon.addEventListener("click", function () {
+  if (password.type == "password") { 
+    password.setAttribute("type", "text");
     icon.classList.remove("fa-eye");
     icon.classList.add("fa-eye-slash");
   } else {
-    password.setAttribute("type","password");
+    password.setAttribute("type", "password");
     icon.classList.add("fa-eye");
     icon.classList.remove("fa-eye-slash");
   }
-})
+});
